@@ -139,7 +139,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{output}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{$104^o$}}
+	{\gnumericPB{\centering}\gnumbox\extrarowheight{360 - 2$\cdot \angle QPS$ - 2 $\cdot \angle SQP$ = $104^o$}}
 	&
 \\
 \hhline{|---|~}
@@ -148,7 +148,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{output}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{$164^o$}}
+	{\gnumericPB{\centering}\gnumbox\extrarowheight{2$\cdot \angle PSR$ = $164^o$}}
 	&
 \\
 \hhline{|---|~}
@@ -157,7 +157,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{output}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox{$110^o$}}
+	{\gnumericPB{\centering}\gnumbox\extrarowheight{2$\cdot \angle SQP$ = $110^o$}}
 	&
 \\
 \hhline{|-|-|-|~}
