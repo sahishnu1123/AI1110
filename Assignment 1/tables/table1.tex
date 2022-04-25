@@ -31,8 +31,9 @@
 	90pt+%
 	82pt+%
 	53pt+%
+	53pt+%
 0pt}
-\def\gumericNumCols{4}
+\def\gumericNumCols{5}
 \setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
          \tabcolsep*\gumericNumCols*2+\arrayrulewidth*\gumericNumCols}
 \ifthenelse{\lengthtest{\gnumericTableWidthComplete > \linewidth}}%
@@ -50,10 +51,11 @@
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{90pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{60pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{70pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{82pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColE}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{82pt*\gnumericScale}@{}}x\end{tabular}}
 
 	\begin{center}
 \begin{tabular}[c]{%
@@ -61,6 +63,7 @@
 	b{\gnumericColB}%
 	b{\gnumericColC}%
 	b{\gnumericColD}%
+	b{\gnumericColE}%
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,70 +100,84 @@
 %	\endlastfoot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hhline{|-|-|-~}
+\hhline{|-|-|-|-~}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{\textbf{Variable}}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox\extrarowheight{\textbf{Variable type (input/output)}}}
+	&\multicolumn{1}{|p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Notation}}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox\extrarowheight{\textbf{Variable type (input/output)}}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
 	{\gnumericPB{\centering}\gnumbox{\textbf{Value}}}
 	&
 \\
-\hhline{|---|~}
+\hhline{|----|~}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\angle PSR$ ($\alpha$)}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{input}}
+	{\gnumericPB{\centering}\gnumbox{$\angle PSR$)}}
+	& \multicolumn{1}{|p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$\alpha$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{input}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
 	{\gnumericPB{\centering}\gnumbox{$82^o$}}
 	&
 \\
-\hhline{|---|~}
+\hhline{|----|~}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\angle QPS$ ($\beta$)}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{input}}
+	{\gnumericPB{\centering}\gnumbox{$\angle QPS$}}
+	& \multicolumn{1}{|p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$\beta$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{input}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
 	{\gnumericPB{\centering}\gnumbox{$73^o$}}
 	&
 \\
-\hhline{|---|~}
+\hhline{|----|~}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\angle SQP$ ($\gamma$)}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{input}}
+	{\gnumericPB{\centering}\gnumbox{$\angle SQP$}}
+	& \multicolumn{1}{|p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$\gamma$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{input}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
 	{\gnumericPB{\centering}\gnumbox{$55^o$}}
 	&
 \\
-\hhline{|---|~}
+\hhline{|----|~}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{$\angle PCQ$}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{output}}
+	& \multicolumn{1}{|p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{-}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{output}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
 	{\gnumericPB{\centering}\gnumbox\extrarowheight{$360^o$ - 2$\beta$ - 2$\gamma$ = $104^o$}}
 	&
 \\
-\hhline{|---|~}
+\hhline{|----|~}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{$\angle PCR$}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{output}}
+	& \multicolumn{1}{|p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{-}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox\extrarowheight{2$\alpha$ = $164^o$}}
+	{\gnumericPB{\centering}\gnumbox{output}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
+	{\gnumericPB{\centering}\gnumbox{2$\alpha$ = $164^o$}}
 	&
 \\
-\hhline{|---|~}
+\hhline{|----|~}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\centering}\gnumbox{$\angle PCS$}}
-	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{output}}
+	& \multicolumn{1}{|p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{-}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox\extrarowheight{2$\gamma$ = $110^o$}}
+	{\gnumericPB{\centering}\gnumbox{output}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
+	{\gnumericPB{\centering}\gnumbox{2$\gamma$ = $110^o$}}
 	&
 \\
-\hhline{|-|-|-|~}
+\hhline{|-|-|-|-|~}
 \end{tabular}
 	\end{center}
 
