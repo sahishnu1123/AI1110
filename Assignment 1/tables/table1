@@ -139,7 +139,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{output}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\centering}\gnumbox\extrarowheight{360 - 2$\beta$ - 2$\gamma$ = $104^o$}}
+	{\gnumericPB{\centering}\gnumbox\extrarowheight{$360^o$ - 2$\beta$ - 2$\gamma$ = $104^o$}}
 	&
 \\
 \hhline{|---|~}
