@@ -1,0 +1,69 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+
+\title{Assignment 3}
+\author{Bhogalapalli Sahishnu, CS21BTECH11009}
+\date{16-05-2022}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Question}
+
+\begin{frame}{Question}
+    \textbf{Q.15 [CBSE 11 Ex 16.3]:}\\
+    If $E$ and $F$ are events such that $P(E)$ = $\frac{1}{4}$, $P(F)$ = $\frac{1}{2}$ and $P(E\cap F)$ = $\frac{1}{8}$, find\\
+\textbf{(i)} $P$($E$ or $F$)\\
+\textbf{(ii)} $P$(not $E$ and not $F$)\\
+\end{frame}
+
+\section{Solution Page 1}
+
+\begin{frame}{Solution Page 1}
+
+\textbf{(i)} $P(E \cup F)$\\
+From Set theory, If there are two events $A$ and $B$, we know that,
+\begin{align}
+    P(A\cup B) = P(A) + P(B) - P(A\cap B)
+\end{align}
+\begin{align}
+    \rightarrow P(E \cup F) = P(E) + P(F) - P(E \cap F)
+\end{align}
+\begin{align}
+    \Rightarrow P(E \cup F) = \frac{1}{4} + \frac{1}{2} - \frac{1}{8} = \frac{5}{8}
+\end{align}
+\begin{align}
+    \boxed{P(E \cup F) = \frac{5}{8}}  
+\end{align}
+    
+\end{frame}
+
+\section{Solution Page 2}
+
+\begin{frame}{Solution Page 2}
+
+\textbf{(ii)} $P(E' \cap F')$\\
+From set theory, If there are two events $A$ and $B$, we know that,
+\begin{align}
+    P(A' \cap B') = (P(A \cup B))'
+\end{align}
+\begin{align}
+    \rightarrow P(E' \cap F') = (P(E \cup F))'
+\end{align}
+\begin{align}
+    \Rightarrow P(E' \cap F') = 1 - P(E \cup F)
+\end{align}
+\begin{align}
+    \Rightarrow P(E' \cap F') = 1 - \frac{5}{8} = \frac{3}{8}
+\end{align}
+\begin{align}
+    \boxed{P(E' \cap F') = \frac{3}{8}}
+\end{align}
+    
+\end{frame}
+
+\end{document}
