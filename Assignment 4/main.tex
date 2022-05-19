@@ -1,0 +1,68 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usetheme{CambridgeUS}
+
+\title{Assignment 4}
+\author{Bhogalapalli Sahishnu, CS21BTECH11009}
+\date{20-05-2022}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Question}
+\begin{frame}{Question}
+
+\textbf{Papoulis-Pillai Ch 2 Ex 2-22: }
+
+A biased coin is tossed till a head appears for the first time. What is the probability that the number of tosses required is odd?
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+
+Let,
+\begin{align}
+    P(H) = p
+\end{align}
+\begin{align}
+    P(T) = q = 1-p
+\end{align}
+
+Also let the event $`A_i$' denote,
+\begin{align}
+    A_i &= "Head\:appears\:for\:the\:first\:time\:at\:the\:i^{th}\:trial."
+\end{align}
+\begin{align}
+     i.e., \; A_i &= \{T,T,T,T,.......T,H\} \; (i-1\:tails\:and\:a\:head)
+\end{align}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+
+Assuming that each coin toss is independent of the other,
+\begin{align}
+    P(A_i) = P(\{T,T,.....,T,H\}) = P(T) P(T) ...... P(T) P(H) = q^{i-1}  p
+\end{align}
+
+\begin{align}
+    \begin{split}
+        P("Head\:appears\:on\:an\:odd\:toss")  &= P(A_1 + A_3 + A_5 + ......)\\
+        &= \sum_{i=0} ^{\infty} P(A_{2i+1}) = \sum_{i=0} ^{\infty} q^{2i} p = p \sum_{i=0} ^{\infty} q^{2i}\\
+        &= \frac{p}{1-q^2} = \frac{p}{(1-q)(1+q)}\\
+        &= \frac{1}{1+q} = \frac{1}{2-p}
+    \end{split}
+\end{align}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+
+$\therefore$ The Probability that the first head appears on an odd toss is \boxed{\frac{1}{2-p}} 
+\end{frame}
+
+
+\end{document}
