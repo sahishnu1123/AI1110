@@ -1,0 +1,98 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\title{Assignment 5}
+\author{Bhogalapalli Sahishnu, CS21BTECH11009}
+\date{May 23, 2022}
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Outline}
+\begin{frame}{Outline}
+    \begin{itemize}
+        \item Question
+        \item Theory
+        \item Solution
+    \end{itemize}
+\end{frame}
+
+\section{Question}
+\begin{frame}{Question}
+    \textbf{Papoulis-Pillai Ch 4 Ex 4-20: }
+
+A fair coin is tossed 1000 times. Find the probability $p_a$ that the heads will show 500 times and the probability $p_b$ that the heads will show 510 times.
+\end{frame}
+
+\section{Theory}
+\begin{frame}{Theory}
+
+\textbf{DeMoivre-Laplace Theorem: }\\
+Suppose a trial is made repeatedly for `n' number of times, where the probability of success is `p' and of failure is `q'. Then the probability `P' of the trial being successful for exactly `k' times is given by
+\begin{align}
+    P(k) = {n \choose k} \cdot p^{k} \cdot q^{n-k}
+\end{align}
+
+When n is very large and k is in the $\sqrt{npq}$ neighbourhood of np, we can approximate
+\begin{align}
+    {n \choose k} \cdot p^k \cdot q^{n-k} \simeq \frac{1}{\sqrt{2 \pi npq}} \cdot e^{\frac{-(k-np)^2}{2npq}}
+\end{align}
+This approximation is known as the DeMoivre-Laplace Theorem.
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+    \textbf{(i)} Probability that the heads will show 500 times, {$p_a$}
+    
+    As this is a binomial probability distribution and the coin is fair,
+    \begin{align}
+        P(H = 500) = {1000 \choose 500} \cdot (\frac{1}{2})^{(500)} \cdot (\frac{1}{2})^{(1000-500)}
+    \end{align}
+    As 1000 is a large number, On comparing with the DeMoivre-Laplace Theorem,
+    \begin{align}
+        n = 1000
+    \end{align}
+    \begin{align}
+        p = \frac{1}{2}
+    \end{align}
+    \begin{align}
+        k = 500
+    \end{align}
+    Also, we can see that $np = 500$, $\sqrt{npq} = 5\sqrt{10}$. And $k = 500$ is in the $\sqrt{npq}$ neighbourhood of $np$.
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+    On applying the approximation,
+    \begin{align}
+            P(H = 500) = p_a \simeq \frac{1}{\sqrt{2 \pi (1000)(\frac{1}{2})(\frac{1}{2})}} \cdot e^{\frac{-(500-(\frac{1000}{2}))^2}{2(1000)(\frac{1}{2})(\frac{1}{2})}}
+    \end{align}
+
+\begin{align}
+    \Rightarrow \boxed{p_a \simeq \frac{1}{10 \sqrt{5 \pi}} = 0.0252}
+\end{align}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+   \textbf{(ii)} Probability that the heads will show 510 times, $p_b$
+   \begin{align}
+       P(H = 500) = {1000 \choose 510} \cdot (\frac{1}{2})^{(510)} \cdot (\frac{1}{2})^{(1000- 510)}
+   \end{align}
+    Similar to the first part, we can see that $k = 510$ is in the $\sqrt{npq}$ neighbourhood of $np$.
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+    So, On applying the approximation
+    \begin{align}
+        P(H = 500) = p_b \simeq \frac{1}{\sqrt{2 \pi (1000)(\frac{1}{2})(\frac{1}{2})}} \cdot e^{\frac{-(510-(\frac{1000}{2}))^2}{2(1000)(\frac{1}{2})(\frac{1}{2})}}
+    \end{align}
+    \begin{align}
+        \Rightarrow \boxed{p_b = \frac{e^{\frac{-1}{5}}}{10 \sqrt{5 \pi}} \simeq 0.0207}
+    \end{align}
+\end{frame}
+
+\end{document}
