@@ -1,0 +1,84 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\title{Assignment 6}
+\author{Bhogalapalli Sahishnu, CS21BTECH11009}
+\date{June 3, 2022}
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Question}
+\begin{frame}{Question}
+    \textbf{Papoulis-Pillai Ch 6 Ex 4-16: }\\
+    \textbf{a)}The function $g(x)$ is monotone increasing and $y\:=\:g(x)$. Show that 
+    \[
+    F_{xy}(x,y)=
+    \begin{cases}
+        F_x(x), &\text{if } y > g(x)\\
+        F_y(y), &\text{if } y < g(x) 
+    \end{cases}
+    \]
+    \textbf{b)}Find $F_{xy}(x,y)$ if $g(x)$ is monotone decreasing.
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+    \textbf{a)} Let us find out the function F(x,y) for the possible values y can take. As the first case,
+    \begin{align}
+        y = y_1 < g(x)
+    \end{align}
+    then,
+    \begin{align*}
+        F(x,y) &= P\{x \leq x, y \leq y_1\}\\\\
+               &= P\{ y \leq y_1\}\: [\because\: \text{all probability masses are on the line y = g(x)}]\\\\
+               &= F_y(y_1)
+    \end{align*}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+    
+If, 
+\begin{align}
+    y = y_2 > g(x)
+\end{align}
+then,
+\begin{align*}
+    F(x,y) &= P\{x \leq x, y \leq y_2\}\\\\
+           &= P\{x \leq x\}\: [\because\: \text{all probability masses are on the line y = g(x)}]\\\\
+           &= F_x(x)
+\end{align*}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+\textbf{b)} Given, g(x) is monotone decreasing. Following the same procedure as before. If
+\begin{align}
+    y = y_1 < g(x),
+\end{align}
+then
+\begin{align*}
+    F(x,y) &= P\{x \leq x, y \leq y_1\}\\\\
+           &= 0
+\end{align*}
+
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+If 
+\begin{align}
+    y = y_2 > g(x),
+\end{align} 
+For this situation, let $g^{-1}(y_2)$ = $x'$ (The function is invertible because it is monotonic)
+\begin{align*}
+    F(x,y) &= P\{x \leq x, y \leq y_2 \}\\\\
+           &= P\{x \leq x'\} - P\{y > y_2\}\\\\
+           &= F_x(x) - [1 - F_y(y_2)]
+\end{align*}
+    
+\end{frame}
+    
+\end{document}
