@@ -1,0 +1,94 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\title{Assignment 7}
+\author{Bhogalapalli Sahishnu, CS21BTECH11009}
+\date{June 7, 2022}
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Question}
+\begin{frame}{Question}
+\textbf{Papoulis-Pillai Ch 6 Ex 4-20: }\\
+The random variables x and y are independent with exponential densities
+\begin{align}
+    f_x(x) = \alpha e^{-\alpha x} u(x) && f_y(y) = \beta e^{-\beta y} u(y)
+\end{align}
+Find the densities of the following random variables:
+\begin{align*}
+    \textbf{a)} 2x + y && \textbf{b)} x - y && \textbf{c)} \frac{x}{y} && \textbf{d)} max(x,y) && \textbf{e)} min(x,y)
+\end{align*}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+\textbf{a)} From the given density of x, density of 2x will be equal to $\frac{1}{2}$ $f_x(\frac{x}{2})$, Hence if $z = 2x + y$, then
+\begin{align*}
+    f_z(z) &= \int_{0}^{z} \frac{\alpha}{2} e^{-\alpha x/2} \beta e^{-\beta (z-x)} \,dx
+\end{align*}
+On integration,
+\begin{align*}
+    f_z(z) = \frac{\alpha \beta}{\alpha - 2\beta} (e^{\beta z} - e^{-\alpha z/2}) u(z)
+\end{align*}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+\textbf{b)} From the given density of y, density of -y will be equal to $f_y(-y)$. Hence if z = x - y, then 
+\begin{align*}
+    f_z(z) &= f_x(z)*f_y(-z)
+           &= \alpha \beta    
+           \begin{cases}
+                \int_{z}^{\infty} e^{-\alpha x} \cdot e^{-\beta(x - z)} \, dx = \frac{\alpha \beta}{\alpha + \beta} \cdot e^{-\alpha z}, z > 0\\\\
+                \int_{z}^{\infty} e^{-\alpha x} \cdot e^{-\beta(x - z)} \, dx = \frac{\alpha \beta}{\alpha + \beta} \cdot e^{\beta z}, z < 0
+           \end{cases}
+\end{align*}
+    
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+\textbf{c)} z = x/y\\
+Let,
+\begin{align*}
+    w = y && x = wz
+\end{align*}
+Now we can write $f_z(z)$ as 
+\begin{align*}
+    f_z(z) &= \alpha \beta \int_{0}^{\infty} w \cdot e^{-\alpha zw} \cdot e^{-\beta w} \, dw \\
+           &= \frac{\alpha \beta}{(\alpha z + \beta)^2} u(z)
+\end{align*}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+\textbf{d)} z = max(x,y)\\
+Here,
+\begin{align}
+    F_z(z) = F_{xy}(z,z) = F_x(z) \cdot F_y(z)
+\end{align}
+On differentiating,
+\begin{align*}
+    f_z(z) &= f_x(z) \cdot F_y(z) + F_x(z) \cdot f_y(z)\\\\
+           &= [\alpha e^{-\alpha z}(1 - e^{-\beta z}) + \beta e^{-\beta z}(1 - e^{-\alpha z})] u(z)
+\end{align*}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+\textbf{e)} z = min(x,y)\\
+Here,
+\begin{align}
+    F_z(z) = F_{x}(z) + F_{y}(z) - F_{x}(z) \cdot F_{y}(z)
+\end{align}
+On differentiating,
+\begin{align*}
+    f_z(z) &= f_x(z) \cdot [1 - F_y(z)] + f_y(z) \cdot [1 - F_x(z)]\\\\
+           &= (\alpha + \beta) e^{-(\alpha + \beta)z}u(z)
+\end{align*}
+\end{frame}
+
+\end{document}
