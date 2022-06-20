@@ -1,0 +1,53 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\title{Assignment 8}
+\author{Bhogalapalli Sahishnu, CS21BTECH11009}
+\date{June 13, 2022}
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\section{Question}
+\begin{frame}{Question}
+\textbf{Papoulis-Pillai Ch 9 Ex 9-21: }\\
+The process $x(t)$ is normal with zero mean. Show that if $y(t) = x^2(t)$, then
+\begin{align*}
+    S_y(w) = 2\pi {R_{x}}^{2}(0) \delta(\omega) + 2 S_{x}(\omega) * S_x(\omega)
+\end{align*}
+\end{frame}
+
+\section{Theory}
+\begin{frame}{Theory}
+\textbf{Frequency Convolution Theorem}: \\
+The frequency convolution theorem states that the multiplication of two signals in time domain is equivalent to the convolution of their spectra in the frequency domain.\\
+We also know that moment generating function of x and y is given by,
+\begin{align}
+    \phi(s_1,s_2) &= E\{e^{s_1x + s_2y}\}\\
+                  &= \sum_{n=0}^{\infty} \frac{1}{n!} \sum_{n=0}^{n} {n \choose k} E\{x^k y^{n-k}\} {s_1}^k {s_2}^{n-k}\\
+                  &= 1 + m_{10}s_1 + m_{01}s_2 + \frac{1}{2}(m_{20}{s_1}^2 + 2m_{11}s_2 + m_{02}{s_2}^2)
+\end{align}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+We can see that,
+\begin{align*}
+    R_{y}(\tau) = E\{x^2(t+\tau)x^2(t)\}
+\end{align*}
+From equation 3,
+\begin{align*}
+    R_y(\tau) &= E\{x^2(t + \tau)\} E\{x^2(t)\} + 2 E^2\{x(t+\tau) x(t)\}\\
+              &= {R_{x}}^2(0) + 2{R_{x}}^2(\tau)
+\end{align*}
+From above conclusion and frequency convolution theorem, it follows that
+\begin{align}
+    S_y(w) = 2\pi {R_x}^2(0)\delta(\omega) + \frac{1}{\pi} S_x(\omega) * S_x(\omega)
+\end{align}
+
+    
+\end{frame}
+
+\end{document}
